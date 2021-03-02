@@ -27,3 +27,12 @@ extension UIViewController {
     
 }
 
+extension Date {
+    
+    func toMonthDate() -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "EEE, MMM d"
+        return dateFormatter.string(from: self)
+    }
+}
+

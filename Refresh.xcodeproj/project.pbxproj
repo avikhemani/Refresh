@@ -31,6 +31,9 @@
 		458FFBE225EDAB6100819DAB /* CompletedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458FFBE125EDAB6100819DAB /* CompletedViewController.swift */; };
 		458FFBE525EDB70700819DAB /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458FFBE425EDB70700819DAB /* Extensions.swift */; };
 		458FFBE825EDBA8900819DAB /* EntriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458FFBE725EDBA8900819DAB /* EntriesViewController.swift */; };
+		45A4F17F25EDC44400B9C2EE /* JournalCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A4F17E25EDC44400B9C2EE /* JournalCollectionViewCell.swift */; };
+		45A4F18225EDCF2600B9C2EE /* JournalEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A4F18125EDCF2600B9C2EE /* JournalEntryViewController.swift */; };
+		45A4F18525EDCFCA00B9C2EE /* SwipeNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A4F18425EDCFCA00B9C2EE /* SwipeNavigationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +63,9 @@
 		458FFBE125EDAB6100819DAB /* CompletedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedViewController.swift; sourceTree = "<group>"; };
 		458FFBE425EDB70700819DAB /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = SOURCE_ROOT; };
 		458FFBE725EDBA8900819DAB /* EntriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntriesViewController.swift; sourceTree = "<group>"; };
+		45A4F17E25EDC44400B9C2EE /* JournalCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalCollectionViewCell.swift; sourceTree = "<group>"; };
+		45A4F18125EDCF2600B9C2EE /* JournalEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalEntryViewController.swift; sourceTree = "<group>"; };
+		45A4F18425EDCFCA00B9C2EE /* SwipeNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeNavigationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +98,7 @@
 		4584D3F525E376AA005B9705 /* Refresh */ = {
 			isa = PBXGroup;
 			children = (
+				45A4F18125EDCF2600B9C2EE /* JournalEntryViewController.swift */,
 				458FFBE425EDB70700819DAB /* Extensions.swift */,
 				458FFBE125EDAB6100819DAB /* CompletedViewController.swift */,
 				458FFBDE25ED8F3E00819DAB /* CompleteTaskViewController.swift */,
@@ -107,10 +114,12 @@
 				458FFBE725EDBA8900819DAB /* EntriesViewController.swift */,
 				4586319725EC9155003AA89C /* MoodCollectionViewCell.swift */,
 				4586319D25EC9214003AA89C /* ReflectViewController.swift */,
+				45A4F17E25EDC44400B9C2EE /* JournalCollectionViewCell.swift */,
 				458631A325ECD971003AA89C /* FeelingCollectionViewCell.swift */,
 				451CD75A25E48B400047C4F0 /* AddTaskViewController.swift */,
 				451CD76025E495460047C4F0 /* ColorCollectionViewCell.swift */,
 				458631A025ECD8F2003AA89C /* DynamicHeightCollectionView.swift */,
+				45A4F18425EDCFCA00B9C2EE /* SwipeNavigationController.swift */,
 				451CD76325E4956E0047C4F0 /* RColor.swift */,
 				451CD75D25E48EA80047C4F0 /* ShapeCollectionViewCell.swift */,
 				4584D41925E3806E005B9705 /* TaskBehavior.swift */,
@@ -191,11 +200,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45A4F17F25EDC44400B9C2EE /* JournalCollectionViewCell.swift in Sources */,
 				451CD76125E495460047C4F0 /* ColorCollectionViewCell.swift in Sources */,
 				4586319825EC9155003AA89C /* MoodCollectionViewCell.swift in Sources */,
 				458FFBDF25ED8F3E00819DAB /* CompleteTaskViewController.swift in Sources */,
 				458631A125ECD8F2003AA89C /* DynamicHeightCollectionView.swift in Sources */,
 				4586319E25EC9214003AA89C /* ReflectViewController.swift in Sources */,
+				45A4F18525EDCFCA00B9C2EE /* SwipeNavigationController.swift in Sources */,
 				458FFBE825EDBA8900819DAB /* EntriesViewController.swift in Sources */,
 				451CD76425E4956E0047C4F0 /* RColor.swift in Sources */,
 				4584D3F725E376AA005B9705 /* AppDelegate.swift in Sources */,
@@ -205,6 +216,7 @@
 				458FFBDC25ED816200819DAB /* Journal.swift in Sources */,
 				4584D41725E37DD9005B9705 /* Shape.swift in Sources */,
 				4584D3F925E376AA005B9705 /* SceneDelegate.swift in Sources */,
+				45A4F18225EDCF2600B9C2EE /* JournalEntryViewController.swift in Sources */,
 				458631A425ECD971003AA89C /* FeelingCollectionViewCell.swift in Sources */,
 				4584D40E25E377B1005B9705 /* DoSomethingViewController.swift in Sources */,
 				458FFBE525EDB70700819DAB /* Extensions.swift in Sources */,

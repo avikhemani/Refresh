@@ -108,7 +108,7 @@ class ReflectViewController: UIViewController, UICollectionViewDelegate, UIColle
 
         userDefaults.setValue(currentJournals, forKey: "JournalArray")
         
-        self.performSegue(withIdentifier: "Save Journal Segue", sender: nil)
+        self.performSegue(withIdentifier: "Save Journal Segue", sender: newJournal)
     }
     
     
@@ -151,14 +151,21 @@ class ReflectViewController: UIViewController, UICollectionViewDelegate, UIColle
         }
         return true
     }
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
+    
+    @IBAction func backPress(_ sender: UIButton) {
+        self.dismiss(animated: true)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "Save Journal Segue" {
+            if let newJournal = sender as? Journal {
+                if let destination = segue.destination as? EntriesViewController {
+                    destination.journals.insert(newJournal, at: 0)
+                    destination.entryCollectionView.reloadData()
+                }
+                
+            }
+        }
+    }
     
 }
