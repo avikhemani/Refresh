@@ -47,5 +47,11 @@ class TaskBehavior: UIDynamicBehavior {
         dynamicItemBehavior.addItem(item)
         gravityBehavior.addItem(item)
     }
+    
+    func removeItem(item: UIDynamicItem) {
+        collisionBehavior.removeItem(item)
+        dynamicItemBehavior.removeItem(item)
+        gravityBehavior.removeItem(item)
+    }
 
 }

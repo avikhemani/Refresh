@@ -10,7 +10,7 @@ import UIKit
 class ReflectViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UITextViewDelegate {
     
     private var moods = Mood.allCases
-    private var feelings = ["Relaxed", "Relaxed", "Calm", "Relaxed", "Relaxed", "Calm", "Relaxed", "Calm"]
+    private var feelings = ["relaxed", "happy", "energized", "apathetic", "angry", "bored", "irritable", "tired", "stressed"]
     
     @IBOutlet weak var moodCollectionView: UICollectionView!
     @IBOutlet weak var feelingCollectionView: DynamicHeightCollectionView!
@@ -96,7 +96,19 @@ class ReflectViewController: UIViewController, UICollectionViewDelegate, UIColle
         
         let notes = notesTextView.text
         
+        let newJournal = Journal(mood: mood, feeling: feeling, intentionality: intentionality, notes: notes)
         
+        let jsonEncoder = JSONEncoder()
+        let jsonData = try! jsonEncoder.encode(newJournal)
+        let json = String(data: jsonData, encoding: String.Encoding.utf8)
+        
+        let userDefaults = UserDefaults.standard
+        var currentJournals = userDefaults.array(forKey: "JournalArray") as? [String] ?? [String]()
+        currentJournals.append(json!)
+
+        userDefaults.setValue(currentJournals, forKey: "JournalArray")
+        
+        self.performSegue(withIdentifier: "Save Journal Segue", sender: nil)
     }
     
     

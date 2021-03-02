@@ -82,6 +82,7 @@ class AddTaskViewController: UIViewController, UITextFieldDelegate, UICollection
         let color = colors[colorIndex]
         
         if taskName == "" {
+            self.displayMessage(title: "Incomplete", message: "Please add a task name")
             return
         }
         
@@ -124,6 +125,8 @@ class AddTaskViewController: UIViewController, UITextFieldDelegate, UICollection
                     let taskView = TaskView(frame: frame, task: newTask)
                     destination.view.addSubview(taskView)
                     destination.behavior.addItem(item: taskView)
+                    let tapGesture = UITapGestureRecognizer(target: destination, action: #selector(destination.completeTask(sender:)))
+                    taskView.addGestureRecognizer(tapGesture)
                 }
                 
             }

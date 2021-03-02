@@ -9,7 +9,7 @@ import UIKit
 
 class TaskView: UIView {
 
-    private let task: Task
+    let task: Task
     
     init(frame: CGRect, task: Task) {
         self.task = task

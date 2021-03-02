@@ -13,6 +13,7 @@ class DoSomethingViewController: UIViewController {
     private lazy var animator = UIDynamicAnimator()
     let behavior = TaskBehavior()
     private let motionManager = CMMotionManager()
+    private var taskViews = [TaskView]()
     @IBOutlet weak var addTaskButton: UIButton! {
         didSet {
             addTaskButton.layer.cornerRadius = addTaskButton.frame.width/2
@@ -33,8 +34,12 @@ class DoSomethingViewController: UIViewController {
             
             let frame = CGRect(x: (i % 2) * 100, y: 100 + Int(i/2) * 200, width: task.width, height: task.height)
             let taskView = TaskView(frame: frame, task: task)
+            taskViews.append(taskView)
             view.addSubview(taskView)
             behavior.addItem(item: taskView)
+            
+            let tapGesture = UITapGestureRecognizer(target: self, action: #selector(completeTask(sender:)))
+            taskView.addGestureRecognizer(tapGesture)
         }
         
         motionManager.startDeviceMotionUpdates(to: .main) { (deviceMotion, error) in
@@ -49,10 +54,44 @@ class DoSomethingViewController: UIViewController {
         behavior.collisionBehavior.addBoundary(withIdentifier: "Test" as NSCopying, for: UIBezierPath(rect: CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height-(tabBarController?.tabBar.frame.height ?? 40))))
     }
     
+    @objc func completeTask(sender: UITapGestureRecognizer) {
+        if let selectedTaskView = sender.view as? TaskView {
+            self.performSegue(withIdentifier: "Complete Task Segue", sender: selectedTaskView.task)
+        }
+        
+    }
+    
     @IBAction func addTask(bySegue: UIStoryboardSegue) {
 
     }
     
+    @IBAction func completeTask(bySegue: UIStoryboardSegue) {
+        if let source = bySegue.source as? CompletedViewController {
+            if let task = source.task {
+                for (i, taskView) in taskViews.enumerated() {
+                    if task == taskView.task {
+                        behavior.removeItem(item: taskView)
+                        taskView.removeFromSuperview()
+                        taskViews.remove(at: i)
+                        
+                        break
+                    }
+                }
+            }
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "Complete Task Segue" {
+            if let task = sender as? Task {
+                if let destination = segue.destination as? UINavigationController {
+                    if let ctVC = destination.topViewController as? CompleteTaskViewController {
+                        ctVC.task = task
+                    }
+                }
+            }
+        }
+    }
 
 
 }

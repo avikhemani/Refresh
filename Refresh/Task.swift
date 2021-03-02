@@ -8,8 +8,8 @@
 import Foundation
 import UIKit
 
-class Task: Codable {
-    
+class Task: Codable, Equatable {
+
     var name: String
     var shape: Shape
     var color: RColor
@@ -23,5 +23,11 @@ class Task: Codable {
         self.width = width
         self.height = height
     }
+    
+    static func == (lhs: Task, rhs: Task) -> Bool {
+        return lhs.name == rhs.name && lhs.shape == rhs.shape && lhs.color == rhs.color && lhs.width == rhs.width && lhs.height == rhs.height
+    }
+    
+    
     
 }

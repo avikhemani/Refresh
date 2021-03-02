@@ -26,6 +26,11 @@
 		4586319E25EC9214003AA89C /* ReflectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4586319D25EC9214003AA89C /* ReflectViewController.swift */; };
 		458631A125ECD8F2003AA89C /* DynamicHeightCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458631A025ECD8F2003AA89C /* DynamicHeightCollectionView.swift */; };
 		458631A425ECD971003AA89C /* FeelingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458631A325ECD971003AA89C /* FeelingCollectionViewCell.swift */; };
+		458FFBDC25ED816200819DAB /* Journal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458FFBDB25ED816200819DAB /* Journal.swift */; };
+		458FFBDF25ED8F3E00819DAB /* CompleteTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458FFBDE25ED8F3E00819DAB /* CompleteTaskViewController.swift */; };
+		458FFBE225EDAB6100819DAB /* CompletedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458FFBE125EDAB6100819DAB /* CompletedViewController.swift */; };
+		458FFBE525EDB70700819DAB /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458FFBE425EDB70700819DAB /* Extensions.swift */; };
+		458FFBE825EDBA8900819DAB /* EntriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458FFBE725EDBA8900819DAB /* EntriesViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +55,11 @@
 		4586319D25EC9214003AA89C /* ReflectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReflectViewController.swift; sourceTree = "<group>"; };
 		458631A025ECD8F2003AA89C /* DynamicHeightCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicHeightCollectionView.swift; sourceTree = "<group>"; };
 		458631A325ECD971003AA89C /* FeelingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeelingCollectionViewCell.swift; sourceTree = "<group>"; };
+		458FFBDB25ED816200819DAB /* Journal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Journal.swift; sourceTree = SOURCE_ROOT; };
+		458FFBDE25ED8F3E00819DAB /* CompleteTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteTaskViewController.swift; sourceTree = "<group>"; };
+		458FFBE125EDAB6100819DAB /* CompletedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedViewController.swift; sourceTree = "<group>"; };
+		458FFBE425EDB70700819DAB /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = SOURCE_ROOT; };
+		458FFBE725EDBA8900819DAB /* EntriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntriesViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +92,10 @@
 		4584D3F525E376AA005B9705 /* Refresh */ = {
 			isa = PBXGroup;
 			children = (
+				458FFBE425EDB70700819DAB /* Extensions.swift */,
+				458FFBE125EDAB6100819DAB /* CompletedViewController.swift */,
+				458FFBDE25ED8F3E00819DAB /* CompleteTaskViewController.swift */,
+				458FFBDB25ED816200819DAB /* Journal.swift */,
 				451CD75725E487880047C4F0 /* Task.swift */,
 				4584D41625E37DD9005B9705 /* Shape.swift */,
 				4586319A25EC9191003AA89C /* Mood.swift */,
@@ -90,6 +104,7 @@
 				4584D3FC25E376AA005B9705 /* Main.storyboard */,
 				4584D3FF25E376AB005B9705 /* Assets.xcassets */,
 				4584D40D25E377B1005B9705 /* DoSomethingViewController.swift */,
+				458FFBE725EDBA8900819DAB /* EntriesViewController.swift */,
 				4586319725EC9155003AA89C /* MoodCollectionViewCell.swift */,
 				4586319D25EC9214003AA89C /* ReflectViewController.swift */,
 				458631A325ECD971003AA89C /* FeelingCollectionViewCell.swift */,
@@ -178,20 +193,25 @@
 			files = (
 				451CD76125E495460047C4F0 /* ColorCollectionViewCell.swift in Sources */,
 				4586319825EC9155003AA89C /* MoodCollectionViewCell.swift in Sources */,
+				458FFBDF25ED8F3E00819DAB /* CompleteTaskViewController.swift in Sources */,
 				458631A125ECD8F2003AA89C /* DynamicHeightCollectionView.swift in Sources */,
 				4586319E25EC9214003AA89C /* ReflectViewController.swift in Sources */,
+				458FFBE825EDBA8900819DAB /* EntriesViewController.swift in Sources */,
 				451CD76425E4956E0047C4F0 /* RColor.swift in Sources */,
 				4584D3F725E376AA005B9705 /* AppDelegate.swift in Sources */,
 				451CD75B25E48B400047C4F0 /* AddTaskViewController.swift in Sources */,
 				4586319B25EC9191003AA89C /* Mood.swift in Sources */,
 				4584D41A25E3806E005B9705 /* TaskBehavior.swift in Sources */,
+				458FFBDC25ED816200819DAB /* Journal.swift in Sources */,
 				4584D41725E37DD9005B9705 /* Shape.swift in Sources */,
 				4584D3F925E376AA005B9705 /* SceneDelegate.swift in Sources */,
 				458631A425ECD971003AA89C /* FeelingCollectionViewCell.swift in Sources */,
 				4584D40E25E377B1005B9705 /* DoSomethingViewController.swift in Sources */,
+				458FFBE525EDB70700819DAB /* Extensions.swift in Sources */,
 				451CD75825E487880047C4F0 /* Task.swift in Sources */,
 				451CD75E25E48EA80047C4F0 /* ShapeCollectionViewCell.swift in Sources */,
 				4584D41125E377F5005B9705 /* TaskView.swift in Sources */,
+				458FFBE225EDAB6100819DAB /* CompletedViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
