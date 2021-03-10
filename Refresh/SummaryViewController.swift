@@ -9,7 +9,7 @@ import UIKit
 
 class SummaryViewController: UIViewController, UIScrollViewDelegate {
 
-    var movies: [String] = ["twitterSummary", "instagramSummary", "twitterSummary"]
+    var movies: [String] = ["instagramSummary", "twitterSummary", "tikTokSummary", "snapchatSummary"]
     var frame = CGRect.zero
     
     @IBOutlet weak var scrollView: UIScrollView!

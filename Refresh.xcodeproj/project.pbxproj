@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4507F87E25F988C300951D61 /* CustomSegments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4507F87625F988C300951D61 /* CustomSegments.swift */; };
+		4507F87F25F988C300951D61 /* CALayerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4507F87725F988C300951D61 /* CALayerExtension.swift */; };
+		4507F88025F988C300951D61 /* BasicBarChartPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4507F87825F988C300951D61 /* BasicBarChartPresenter.swift */; };
+		4507F88125F988C300951D61 /* UIBezierPathExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4507F87925F988C300951D61 /* UIBezierPathExtension.swift */; };
+		4507F88225F988C300951D61 /* BasicBarChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4507F87A25F988C300951D61 /* BasicBarChart.swift */; };
+		4507F88325F988C300951D61 /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4507F87B25F988C300951D61 /* ArrayExtension.swift */; };
+		4507F88425F988C300951D61 /* DataEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4507F87C25F988C300951D61 /* DataEntry.swift */; };
+		4507F88525F988C300951D61 /* BasicBarEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4507F87D25F988C300951D61 /* BasicBarEntry.swift */; };
 		451CD75825E487880047C4F0 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451CD75725E487880047C4F0 /* Task.swift */; };
 		451CD75B25E48B400047C4F0 /* AddTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451CD75A25E48B400047C4F0 /* AddTaskViewController.swift */; };
 		451CD75E25E48EA80047C4F0 /* ShapeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451CD75D25E48EA80047C4F0 /* ShapeCollectionViewCell.swift */; };
@@ -40,6 +48,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4507F87625F988C300951D61 /* CustomSegments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSegments.swift; sourceTree = "<group>"; };
+		4507F87725F988C300951D61 /* CALayerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CALayerExtension.swift; sourceTree = "<group>"; };
+		4507F87825F988C300951D61 /* BasicBarChartPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicBarChartPresenter.swift; sourceTree = "<group>"; };
+		4507F87925F988C300951D61 /* UIBezierPathExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIBezierPathExtension.swift; sourceTree = "<group>"; };
+		4507F87A25F988C300951D61 /* BasicBarChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicBarChart.swift; sourceTree = "<group>"; };
+		4507F87B25F988C300951D61 /* ArrayExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
+		4507F87C25F988C300951D61 /* DataEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataEntry.swift; sourceTree = "<group>"; };
+		4507F87D25F988C300951D61 /* BasicBarEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicBarEntry.swift; sourceTree = "<group>"; };
 		451CD75725E487880047C4F0 /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		451CD75A25E48B400047C4F0 /* AddTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskViewController.swift; sourceTree = "<group>"; };
 		451CD75D25E48EA80047C4F0 /* ShapeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -85,6 +101,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4507F87525F988C300951D61 /* BarChart */ = {
+			isa = PBXGroup;
+			children = (
+				4507F87625F988C300951D61 /* CustomSegments.swift */,
+				4507F87725F988C300951D61 /* CALayerExtension.swift */,
+				4507F87825F988C300951D61 /* BasicBarChartPresenter.swift */,
+				4507F87925F988C300951D61 /* UIBezierPathExtension.swift */,
+				4507F87A25F988C300951D61 /* BasicBarChart.swift */,
+				4507F87B25F988C300951D61 /* ArrayExtension.swift */,
+				4507F87C25F988C300951D61 /* DataEntry.swift */,
+				4507F87D25F988C300951D61 /* BasicBarEntry.swift */,
+			);
+			path = BarChart;
+			sourceTree = "<group>";
+		};
 		4584D3EA25E376AA005B9705 = {
 			isa = PBXGroup;
 			children = (
@@ -121,6 +152,7 @@
 				4584D3FF25E376AB005B9705 /* Assets.xcassets */,
 				4584D40D25E377B1005B9705 /* DoSomethingViewController.swift */,
 				458FFBE725EDBA8900819DAB /* EntriesViewController.swift */,
+				4507F87525F988C300951D61 /* BarChart */,
 				4586319725EC9155003AA89C /* MoodCollectionViewCell.swift */,
 				4586319D25EC9214003AA89C /* ReflectViewController.swift */,
 				45A4F17E25EDC44400B9C2EE /* JournalCollectionViewCell.swift */,
@@ -213,10 +245,13 @@
 				451CD76125E495460047C4F0 /* ColorCollectionViewCell.swift in Sources */,
 				4586319825EC9155003AA89C /* MoodCollectionViewCell.swift in Sources */,
 				458FFBDF25ED8F3E00819DAB /* CompleteTaskViewController.swift in Sources */,
+				4507F87F25F988C300951D61 /* CALayerExtension.swift in Sources */,
 				458631A125ECD8F2003AA89C /* DynamicHeightCollectionView.swift in Sources */,
 				4586319E25EC9214003AA89C /* ReflectViewController.swift in Sources */,
 				45A4F18525EDCFCA00B9C2EE /* SwipeNavigationController.swift in Sources */,
+				4507F88025F988C300951D61 /* BasicBarChartPresenter.swift in Sources */,
 				458FFBE825EDBA8900819DAB /* EntriesViewController.swift in Sources */,
+				4507F88525F988C300951D61 /* BasicBarEntry.swift in Sources */,
 				451CD76425E4956E0047C4F0 /* RColor.swift in Sources */,
 				4584D3F725E376AA005B9705 /* AppDelegate.swift in Sources */,
 				451CD75B25E48B400047C4F0 /* AddTaskViewController.swift in Sources */,
@@ -225,10 +260,15 @@
 				458FFBDC25ED816200819DAB /* Journal.swift in Sources */,
 				4584D41725E37DD9005B9705 /* Shape.swift in Sources */,
 				4584D3F925E376AA005B9705 /* SceneDelegate.swift in Sources */,
+				4507F87E25F988C300951D61 /* CustomSegments.swift in Sources */,
 				45A4F18225EDCF2600B9C2EE /* JournalEntryViewController.swift in Sources */,
 				456997DA25F95AD4006F35F4 /* InsightsViewController.swift in Sources */,
+				4507F88325F988C300951D61 /* ArrayExtension.swift in Sources */,
+				4507F88125F988C300951D61 /* UIBezierPathExtension.swift in Sources */,
 				458631A425ECD971003AA89C /* FeelingCollectionViewCell.swift in Sources */,
+				4507F88225F988C300951D61 /* BasicBarChart.swift in Sources */,
 				4584D40E25E377B1005B9705 /* DoSomethingViewController.swift in Sources */,
+				4507F88425F988C300951D61 /* DataEntry.swift in Sources */,
 				458FFBE525EDB70700819DAB /* Extensions.swift in Sources */,
 				451CD75825E487880047C4F0 /* Task.swift in Sources */,
 				451CD75E25E48EA80047C4F0 /* ShapeCollectionViewCell.swift in Sources */,

@@ -76,6 +76,15 @@ class CompleteTaskViewController: UIViewController {
         completedTasks.append(json!)
         userDefaults.setValue(completedTasks, forKey: "CompletedArray")
         
+        var dateToCompleted = userDefaults.dictionary(forKey: "DateToCompleted") as? [String : Int] ?? [String : Int]()
+        let dateString = Date().toShortDate()
+        if let numCompleted = dateToCompleted[dateString] {
+            dateToCompleted[dateString] = numCompleted + 1
+        } else {
+            dateToCompleted[dateString] = 1
+        }
+        userDefaults.setValue(dateToCompleted, forKey: "DateToCompleted")
+        
         UIView.animate(withDuration: 0.5) {
             self.taskView.frame = CGRect(x: (self.view.frame.width/2) - (CGFloat(self.task!.width)/2), y: CGFloat(-self.task!.height), width: CGFloat(self.task!.width), height: CGFloat(self.task!.height))
         } completion: { (completed) in

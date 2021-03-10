@@ -20,6 +20,17 @@ class InsightsViewController: UIViewController {
                 color: .blue,
                 width: 120,
                 height: 120)
+        ),
+        Tip(
+            insight: "more than 2/3 of your mindless scrolling happens when you’re about to go to bed!",
+            advice: "some people find it helpful to make a night time routine. ",
+            action: "add a night time routine",
+            task: Task(
+                name: "night time routine",
+                shape: .circle,
+                color: .blue,
+                width: 120,
+                height: 120)
         )
     
     
@@ -45,8 +56,14 @@ class InsightsViewController: UIViewController {
         didSet {
             summaryImageView.layer.cornerRadius = 15
             summaryImageView.clipsToBounds = true
+            summaryImageView.alpha = 0.9
         }
     }
+    
+    @IBOutlet weak var basicBarChart: BasicBarChart!
+    @IBOutlet weak var maxLabel: UILabel!
+    @IBOutlet weak var midLabel: UILabel!
+    @IBOutlet weak var minLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,7 +72,7 @@ class InsightsViewController: UIViewController {
     }
     
     private func loadUI() {
-        let selectedTip = tips[0]
+        let selectedTip = tips[1]
         
         tipInsightLabel.text = selectedTip.insight
         tipAdviceLabel.text = selectedTip.advice
@@ -68,10 +85,31 @@ class InsightsViewController: UIViewController {
         
         let userDefaults = UserDefaults.standard
         let completedTips = userDefaults.array(forKey: "CompletedTips") as? [Int] ?? [Int]()
-        if completedTips.contains(0) {
+        if completedTips.contains(1) {
             tipButton.isEnabled = false
             tipButton.backgroundColor = .systemGray3
         }
+        
+        updateChart()
+        
+    }
+    
+    func updateChart() {
+        let userDefaults = UserDefaults.standard
+        let dateToCompleted = userDefaults.dictionary(forKey: "DateToCompleted") as? [String : Int] ?? [String : Int]()
+        var dataEntries = [DataEntry]()
+        var max = dateToCompleted.values.max() ?? 0
+        if max % 2 == 1 {
+            max += 1
+        }
+        maxLabel.text = "\(max)"
+        midLabel.text = "\(max/2)"
+        for date in dateToCompleted.keys.sorted() {
+            let progress = dateToCompleted[date] ?? 0
+            let entry = DataEntry(color: .systemPink, height: Float(progress)/Float(max), textValue: "\(progress)", title: date)
+            dataEntries.append(entry)
+        }
+        basicBarChart.updateDataEntries(dataEntries: dataEntries, animated: true)
     }
     
     @objc func viewSummary() {
@@ -80,7 +118,7 @@ class InsightsViewController: UIViewController {
     
     @IBAction func tipButtonPress(_ sender: UIButton) {
         if let navVC = tabBarController?.viewControllers?[1] as? UINavigationController, let doSomethingVC = navVC.topViewController as? DoSomethingViewController {
-            let selectedTip = tips[0]
+            let selectedTip = tips[1]
             
             let newTask = selectedTip.task
             

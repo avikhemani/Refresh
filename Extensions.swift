@@ -40,5 +40,11 @@ extension Date {
         dateFormatter.dateFormat = "EEEE, MMM d"
         return dateFormatter.string(from: self)
     }
+    
+    func toShortDate() -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMM d"
+        return dateFormatter.string(from: self)
+    }
 }
 

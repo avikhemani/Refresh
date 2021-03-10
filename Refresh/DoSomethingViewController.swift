@@ -78,6 +78,10 @@ class DoSomethingViewController: UIViewController {
                 }
             }
         }
+        if let navVC = tabBarController?.viewControllers?[2] as? UINavigationController, let insightsVC = navVC.topViewController as? InsightsViewController {
+            insightsVC.updateChart()
+        }
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
