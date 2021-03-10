@@ -862,7 +862,7 @@
                                 <color key="textColor" systemColor="systemGrayColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jL7-RU-cmH">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notes" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jL7-RU-cmH">
                                 <rect key="frame" x="30" y="348" width="354" height="27.5"/>
                                 <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="20"/>
                                 <nil key="textColor"/>
@@ -929,8 +929,8 @@
         <scene sceneID="ONd-te-3kB">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="Pwy-sr-BpX" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="doSomethingIcon" id="5mW-6A-nfI">
-                        <inset key="imageInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-10"/>
+                    <tabBarItem key="tabBarItem" title="" image="doSomethingIcon" selectedImage="doSomethingSelectedIcon" id="5mW-6A-nfI">
+                        <inset key="imageInsets" minX="0.0" minY="8" maxX="0.0" maxY="-5"/>
                         <inset key="largeContentSizeImageInsets" minX="0.0" minY="10" maxX="0.0" maxY="0.0"/>
                         <color key="badgeColor" systemColor="systemPinkColor"/>
                     </tabBarItem>
@@ -947,11 +947,13 @@
             </objects>
             <point key="canvasLocation" x="152.17391304347828" y="77.678571428571431"/>
         </scene>
-        <!--Reflect-->
+        <!--Swipe Navigation Controller-->
         <scene sceneID="IOc-70-tqZ">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="6mD-kB-Ux5" customClass="SwipeNavigationController" customModule="Refresh" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Reflect" id="yab-u7-Ilf"/>
+                    <tabBarItem key="tabBarItem" title="" image="reflectIcon" selectedImage="reflectSelectedIcon" id="yab-u7-Ilf">
+                        <inset key="imageInsets" minX="0.0" minY="8" maxX="0.0" maxY="-5"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ZSW-6e-bvg">
                         <autoresizingMask key="autoresizingMask"/>
@@ -986,8 +988,8 @@
         <scene sceneID="bqZ-Og-aDD">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="3Ay-Ox-otD" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="profileIcon" id="GQL-HB-LIZ">
-                        <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
+                    <tabBarItem key="tabBarItem" title="" image="profileIcon" selectedImage="profileSelectedIcon" id="GQL-HB-LIZ">
+                        <inset key="imageInsets" minX="0.0" minY="8" maxX="0.0" maxY="-5"/>
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="wr0-gE-TJh">
@@ -1272,14 +1274,18 @@
     <resources>
         <image name="backIcon" width="300" height="300"/>
         <image name="doSomethingIcon" width="35" height="35"/>
+        <image name="doSomethingSelectedIcon" width="35" height="35"/>
         <image name="happyIcon" width="256" height="256"/>
         <image name="instagramSummary" width="375" height="812"/>
         <image name="moreIcon" width="300" height="300"/>
         <image name="neutralIcon" width="256" height="256"/>
         <image name="profileIcon" width="35" height="35"/>
+        <image name="profileSelectedIcon" width="35" height="35"/>
+        <image name="reflectIcon" width="35" height="35"/>
+        <image name="reflectSelectedIcon" width="35" height="35"/>
         <image name="xmark" catalog="system" width="128" height="113"/>
         <namedColor name="tipBackground">
-            <color red="1" green="0.87236904627579526" blue="0.90669831967320835" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="1" green="0.87199997901916504" blue="0.90700000524520874" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
