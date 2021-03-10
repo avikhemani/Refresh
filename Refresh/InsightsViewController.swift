@@ -95,6 +95,9 @@ class InsightsViewController: UIViewController {
     }
     
     func updateChart() {
+        if maxLabel == nil || midLabel == nil || minLabel == nil {
+            return
+        }
         let userDefaults = UserDefaults.standard
         let dateToCompleted = userDefaults.dictionary(forKey: "DateToCompleted") as? [String : Int] ?? [String : Int]()
         var dataEntries = [DataEntry]()
