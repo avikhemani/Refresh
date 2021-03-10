@@ -125,6 +125,7 @@ class AddTaskViewController: UIViewController, UITextFieldDelegate, UICollection
                     let taskView = TaskView(frame: frame, task: newTask)
                     destination.view.addSubview(taskView)
                     destination.behavior.addItem(item: taskView)
+                    destination.taskViews.append(taskView)
                     let tapGesture = UITapGestureRecognizer(target: destination, action: #selector(destination.completeTask(sender:)))
                     taskView.addGestureRecognizer(tapGesture)
                 }

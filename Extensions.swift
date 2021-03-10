@@ -34,5 +34,11 @@ extension Date {
         dateFormatter.dateFormat = "EEE, MMM d"
         return dateFormatter.string(from: self)
     }
+    
+    func toLongMonthDate() -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "EEEE, MMM d"
+        return dateFormatter.string(from: self)
+    }
 }
 

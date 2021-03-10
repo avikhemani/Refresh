@@ -13,7 +13,7 @@ class DoSomethingViewController: UIViewController {
     private lazy var animator = UIDynamicAnimator()
     let behavior = TaskBehavior()
     private let motionManager = CMMotionManager()
-    private var taskViews = [TaskView]()
+    var taskViews = [TaskView]()
     @IBOutlet weak var addTaskButton: UIButton! {
         didSet {
             addTaskButton.layer.cornerRadius = addTaskButton.frame.width/2
@@ -73,7 +73,6 @@ class DoSomethingViewController: UIViewController {
                         behavior.removeItem(item: taskView)
                         taskView.removeFromSuperview()
                         taskViews.remove(at: i)
-                        
                         break
                     }
                 }

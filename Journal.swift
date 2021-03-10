@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Journal: Codable {
+class Journal: Codable, Equatable {
     
     var mood: Mood
     var feeling: String
@@ -23,6 +23,9 @@ class Journal: Codable {
         self.dateCreated = Date()
     }
     
+    static func == (lhs: Journal, rhs: Journal) -> Bool {
+        return lhs.mood == rhs.mood && lhs.feeling == rhs.feeling && lhs.intentionality == rhs.intentionality && lhs.notes == rhs.notes && lhs.dateCreated == rhs.dateCreated
+    }
     
     
 }

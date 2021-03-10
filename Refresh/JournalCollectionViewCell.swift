@@ -14,16 +14,24 @@ class JournalCollectionViewCell: UICollectionViewCell {
             dateLabel.text = journal?.dateCreated.toMonthDate().lowercased()
             moodImageView.image = UIImage(named: journal!.mood.iconString)
             feelingLabel.text = journal?.feeling
-            intentionalitySlider.value = journal?.intentionality ?? 0.5
             contentView.layer.cornerRadius = 20
             contentView.clipsToBounds = true
-            contentView.outlineBorder(width: 1, color: .label)
+//            contentView.outlineBorder(width: 1, color: .label)
+            contentView.backgroundColor = .systemGray6
+            intentionalityBackBar.layer.cornerRadius = 10
+            intentionalityBackBar.clipsToBounds = true
+            intentionalityFrontBar.layer.cornerRadius = 10
+            intentionalityFrontBar.clipsToBounds = true
+            frontBarWidth.constant = intentionalityBackBar.frame.width * CGFloat(journal!.intentionality)
         }
     }
     
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var moodImageView: UIImageView!
     @IBOutlet weak var feelingLabel: UILabel!
-    @IBOutlet weak var intentionalitySlider: UISlider!
+    @IBOutlet weak var intentionalityBackBar: UIView!
     
+    @IBOutlet weak var intentionalityFrontBar: UIView!
+    
+    @IBOutlet weak var frontBarWidth: NSLayoutConstraint!
 }

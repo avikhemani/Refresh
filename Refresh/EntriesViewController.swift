@@ -52,6 +52,15 @@ class EntriesViewController: UIViewController, UICollectionViewDelegate, UIColle
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let selectedJournal = journals[indexPath.row]
         
+        if let journalCell = self.entryCollectionView.cellForItem(at: indexPath) as? JournalCollectionViewCell {
+            journalCell.contentView.backgroundColor = .systemGray4
+            UIView.animate(withDuration: 0.5, animations: {
+                journalCell.contentView.backgroundColor = .systemGray6
+            }) { (completed) in
+                
+            }
+        }
+            
         self.performSegue(withIdentifier: "Show Entry Segue", sender: selectedJournal)
         
     }
@@ -65,9 +74,47 @@ class EntriesViewController: UIViewController, UICollectionViewDelegate, UIColle
     }
     
     @IBAction func saveJournal(bySegue: UIStoryboardSegue) {
+        let seconds = 0.2
+        DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
+            if let journalCell = self.entryCollectionView.cellForItem(at: IndexPath(row: 0, section: 0)) as? JournalCollectionViewCell {
+                UIView.animate(withDuration: 0.6) {
+                    
+                    journalCell.contentView.backgroundColor = UIColor.systemPink.withAlphaComponent(0.5)
+                } completion: { (true) in
+                    UIView.animate(withDuration: 0.6) {
+                        
+                        journalCell.contentView.backgroundColor = .systemGray6
+                    } completion: { (true) in
+                        UIView.animate(withDuration: 0.6) {
+                            
+                            journalCell.contentView.backgroundColor = UIColor.systemPink.withAlphaComponent(0.5)
+                        } completion: { (true) in
+                            UIView.animate(withDuration: 0.6) {
+                                
+                                journalCell.contentView.backgroundColor = .systemGray6
+                            } completion: { (true) in
+                                
+                            }
+                        }
+                    }
+                }
+
+            }
+        }
         
     }
 
+    @IBAction func deleteJournal(bySegue: UIStoryboardSegue) {
+        let seconds = 0.2
+        let selectedRow = entryCollectionView.indexPathsForSelectedItems?[0].row ?? 0
+        DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
+            UIView.animate(withDuration: 1.0) {
+                self.entryCollectionView.deleteItems(at: [IndexPath(row: selectedRow, section: 0)])
+            }
+        }
+
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "Show Entry Segue" {
             if let journal = sender as? Journal {

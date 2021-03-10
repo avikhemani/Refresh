@@ -12,6 +12,9 @@
 		451CD75E25E48EA80047C4F0 /* ShapeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451CD75D25E48EA80047C4F0 /* ShapeCollectionViewCell.swift */; };
 		451CD76125E495460047C4F0 /* ColorCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451CD76025E495460047C4F0 /* ColorCollectionViewCell.swift */; };
 		451CD76425E4956E0047C4F0 /* RColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451CD76325E4956E0047C4F0 /* RColor.swift */; };
+		456997DA25F95AD4006F35F4 /* InsightsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456997D925F95AD4006F35F4 /* InsightsViewController.swift */; };
+		456997DD25F96099006F35F4 /* Tip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456997DC25F96099006F35F4 /* Tip.swift */; };
+		456997E025F97AEF006F35F4 /* SummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456997DF25F97AEF006F35F4 /* SummaryViewController.swift */; };
 		4584D3F725E376AA005B9705 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4584D3F625E376AA005B9705 /* AppDelegate.swift */; };
 		4584D3F925E376AA005B9705 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4584D3F825E376AA005B9705 /* SceneDelegate.swift */; };
 		4584D3FE25E376AA005B9705 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4584D3FC25E376AA005B9705 /* Main.storyboard */; };
@@ -42,6 +45,9 @@
 		451CD75D25E48EA80047C4F0 /* ShapeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeCollectionViewCell.swift; sourceTree = "<group>"; };
 		451CD76025E495460047C4F0 /* ColorCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCollectionViewCell.swift; sourceTree = "<group>"; };
 		451CD76325E4956E0047C4F0 /* RColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RColor.swift; sourceTree = "<group>"; };
+		456997D925F95AD4006F35F4 /* InsightsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsightsViewController.swift; sourceTree = "<group>"; };
+		456997DC25F96099006F35F4 /* Tip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tip.swift; sourceTree = "<group>"; };
+		456997DF25F97AEF006F35F4 /* SummaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryViewController.swift; sourceTree = "<group>"; };
 		4584D3F325E376AA005B9705 /* Refresh.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Refresh.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4584D3F625E376AA005B9705 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4584D3F825E376AA005B9705 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -98,6 +104,9 @@
 		4584D3F525E376AA005B9705 /* Refresh */ = {
 			isa = PBXGroup;
 			children = (
+				456997D925F95AD4006F35F4 /* InsightsViewController.swift */,
+				456997DF25F97AEF006F35F4 /* SummaryViewController.swift */,
+				456997DC25F96099006F35F4 /* Tip.swift */,
 				45A4F18125EDCF2600B9C2EE /* JournalEntryViewController.swift */,
 				458FFBE425EDB70700819DAB /* Extensions.swift */,
 				458FFBE125EDAB6100819DAB /* CompletedViewController.swift */,
@@ -217,13 +226,16 @@
 				4584D41725E37DD9005B9705 /* Shape.swift in Sources */,
 				4584D3F925E376AA005B9705 /* SceneDelegate.swift in Sources */,
 				45A4F18225EDCF2600B9C2EE /* JournalEntryViewController.swift in Sources */,
+				456997DA25F95AD4006F35F4 /* InsightsViewController.swift in Sources */,
 				458631A425ECD971003AA89C /* FeelingCollectionViewCell.swift in Sources */,
 				4584D40E25E377B1005B9705 /* DoSomethingViewController.swift in Sources */,
 				458FFBE525EDB70700819DAB /* Extensions.swift in Sources */,
 				451CD75825E487880047C4F0 /* Task.swift in Sources */,
 				451CD75E25E48EA80047C4F0 /* ShapeCollectionViewCell.swift in Sources */,
+				456997DD25F96099006F35F4 /* Tip.swift in Sources */,
 				4584D41125E377F5005B9705 /* TaskView.swift in Sources */,
 				458FFBE225EDAB6100819DAB /* CompletedViewController.swift in Sources */,
+				456997E025F97AEF006F35F4 /* SummaryViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
