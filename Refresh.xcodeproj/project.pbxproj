@@ -15,6 +15,9 @@
 		4507F88325F988C300951D61 /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4507F87B25F988C300951D61 /* ArrayExtension.swift */; };
 		4507F88425F988C300951D61 /* DataEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4507F87C25F988C300951D61 /* DataEntry.swift */; };
 		4507F88525F988C300951D61 /* BasicBarEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4507F87D25F988C300951D61 /* BasicBarEntry.swift */; };
+		4510807F26002B2A001536DD /* TimeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4510807E26002B2A001536DD /* TimeCollectionViewCell.swift */; };
+		4510808226002B5D001536DD /* InfoButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4510808126002B5D001536DD /* InfoButton.swift */; };
+		451080852600373D001536DD /* Reminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451080842600373D001536DD /* Reminder.swift */; };
 		451CD75825E487880047C4F0 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451CD75725E487880047C4F0 /* Task.swift */; };
 		451CD75B25E48B400047C4F0 /* AddTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451CD75A25E48B400047C4F0 /* AddTaskViewController.swift */; };
 		451CD75E25E48EA80047C4F0 /* ShapeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451CD75D25E48EA80047C4F0 /* ShapeCollectionViewCell.swift */; };
@@ -45,6 +48,11 @@
 		45A4F17F25EDC44400B9C2EE /* JournalCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A4F17E25EDC44400B9C2EE /* JournalCollectionViewCell.swift */; };
 		45A4F18225EDCF2600B9C2EE /* JournalEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A4F18125EDCF2600B9C2EE /* JournalEntryViewController.swift */; };
 		45A4F18525EDCFCA00B9C2EE /* SwipeNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A4F18425EDCFCA00B9C2EE /* SwipeNavigationController.swift */; };
+		45AD168425FDF8820022C62F /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AD168325FDF8820022C62F /* OnboardingViewController.swift */; };
+		45AD168725FE07940022C62F /* OnboardingReasonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AD168625FE07940022C62F /* OnboardingReasonViewController.swift */; };
+		45AD168A25FE0AD80022C62F /* OnboardingActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AD168925FE0AD80022C62F /* OnboardingActivityViewController.swift */; };
+		45AD168D25FE10110022C62F /* OnboardingRemindersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AD168C25FE10110022C62F /* OnboardingRemindersViewController.swift */; };
+		45AD169025FE10B70022C62F /* OnboardingEndViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AD168F25FE10B70022C62F /* OnboardingEndViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +64,9 @@
 		4507F87B25F988C300951D61 /* ArrayExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
 		4507F87C25F988C300951D61 /* DataEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataEntry.swift; sourceTree = "<group>"; };
 		4507F87D25F988C300951D61 /* BasicBarEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicBarEntry.swift; sourceTree = "<group>"; };
+		4510807E26002B2A001536DD /* TimeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeCollectionViewCell.swift; sourceTree = "<group>"; };
+		4510808126002B5D001536DD /* InfoButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoButton.swift; sourceTree = "<group>"; };
+		451080842600373D001536DD /* Reminder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reminder.swift; sourceTree = SOURCE_ROOT; };
 		451CD75725E487880047C4F0 /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		451CD75A25E48B400047C4F0 /* AddTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskViewController.swift; sourceTree = "<group>"; };
 		451CD75D25E48EA80047C4F0 /* ShapeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -88,6 +99,11 @@
 		45A4F17E25EDC44400B9C2EE /* JournalCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalCollectionViewCell.swift; sourceTree = "<group>"; };
 		45A4F18125EDCF2600B9C2EE /* JournalEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalEntryViewController.swift; sourceTree = "<group>"; };
 		45A4F18425EDCFCA00B9C2EE /* SwipeNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeNavigationController.swift; sourceTree = "<group>"; };
+		45AD168325FDF8820022C62F /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		45AD168625FE07940022C62F /* OnboardingReasonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingReasonViewController.swift; sourceTree = "<group>"; };
+		45AD168925FE0AD80022C62F /* OnboardingActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingActivityViewController.swift; sourceTree = "<group>"; };
+		45AD168C25FE10110022C62F /* OnboardingRemindersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingRemindersViewController.swift; sourceTree = "<group>"; };
+		45AD168F25FE10B70022C62F /* OnboardingEndViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingEndViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +151,14 @@
 		4584D3F525E376AA005B9705 /* Refresh */ = {
 			isa = PBXGroup;
 			children = (
+				451080842600373D001536DD /* Reminder.swift */,
+				4510807E26002B2A001536DD /* TimeCollectionViewCell.swift */,
+				4510808126002B5D001536DD /* InfoButton.swift */,
+				45AD168325FDF8820022C62F /* OnboardingViewController.swift */,
+				45AD168625FE07940022C62F /* OnboardingReasonViewController.swift */,
+				45AD168925FE0AD80022C62F /* OnboardingActivityViewController.swift */,
+				45AD168C25FE10110022C62F /* OnboardingRemindersViewController.swift */,
+				45AD168F25FE10B70022C62F /* OnboardingEndViewController.swift */,
 				456997D925F95AD4006F35F4 /* InsightsViewController.swift */,
 				456997DF25F97AEF006F35F4 /* SummaryViewController.swift */,
 				456997DC25F96099006F35F4 /* Tip.swift */,
@@ -241,13 +265,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45AD168725FE07940022C62F /* OnboardingReasonViewController.swift in Sources */,
 				45A4F17F25EDC44400B9C2EE /* JournalCollectionViewCell.swift in Sources */,
 				451CD76125E495460047C4F0 /* ColorCollectionViewCell.swift in Sources */,
 				4586319825EC9155003AA89C /* MoodCollectionViewCell.swift in Sources */,
 				458FFBDF25ED8F3E00819DAB /* CompleteTaskViewController.swift in Sources */,
 				4507F87F25F988C300951D61 /* CALayerExtension.swift in Sources */,
+				45AD168D25FE10110022C62F /* OnboardingRemindersViewController.swift in Sources */,
+				45AD169025FE10B70022C62F /* OnboardingEndViewController.swift in Sources */,
 				458631A125ECD8F2003AA89C /* DynamicHeightCollectionView.swift in Sources */,
 				4586319E25EC9214003AA89C /* ReflectViewController.swift in Sources */,
+				451080852600373D001536DD /* Reminder.swift in Sources */,
+				45AD168425FDF8820022C62F /* OnboardingViewController.swift in Sources */,
 				45A4F18525EDCFCA00B9C2EE /* SwipeNavigationController.swift in Sources */,
 				4507F88025F988C300951D61 /* BasicBarChartPresenter.swift in Sources */,
 				458FFBE825EDBA8900819DAB /* EntriesViewController.swift in Sources */,
@@ -266,10 +295,13 @@
 				4507F88325F988C300951D61 /* ArrayExtension.swift in Sources */,
 				4507F88125F988C300951D61 /* UIBezierPathExtension.swift in Sources */,
 				458631A425ECD971003AA89C /* FeelingCollectionViewCell.swift in Sources */,
+				4510807F26002B2A001536DD /* TimeCollectionViewCell.swift in Sources */,
 				4507F88225F988C300951D61 /* BasicBarChart.swift in Sources */,
 				4584D40E25E377B1005B9705 /* DoSomethingViewController.swift in Sources */,
 				4507F88425F988C300951D61 /* DataEntry.swift in Sources */,
+				45AD168A25FE0AD80022C62F /* OnboardingActivityViewController.swift in Sources */,
 				458FFBE525EDB70700819DAB /* Extensions.swift in Sources */,
+				4510808226002B5D001536DD /* InfoButton.swift in Sources */,
 				451CD75825E487880047C4F0 /* Task.swift in Sources */,
 				451CD75E25E48EA80047C4F0 /* ShapeCollectionViewCell.swift in Sources */,
 				456997DD25F96099006F35F4 /* Tip.swift in Sources */,

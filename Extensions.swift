@@ -46,5 +46,15 @@ extension Date {
         dateFormatter.dateFormat = "MMM d"
         return dateFormatter.string(from: self)
     }
+    
+    
+    func toHourString() -> String {
+        let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: "en_US_POSIX")
+        formatter.dateFormat = "h:mm a"
+        formatter.amSymbol = "AM"
+        formatter.pmSymbol = "PM"
+        return formatter.string(from: self)
+    }
 }
 

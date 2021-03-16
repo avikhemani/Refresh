@@ -69,10 +69,6 @@ class EntriesViewController: UIViewController, UICollectionViewDelegate, UIColle
         return CGSize(width: collectionView.frame.width/2 - 10, height: 220)
     }
     
-    @IBAction func newEntryPress(_ sender: UIButton) {
-        self.dismiss(animated: true)
-    }
-    
     @IBAction func saveJournal(bySegue: UIStoryboardSegue) {
         let seconds = 0.2
         DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
