@@ -18,23 +18,56 @@ class InsightsViewController: UIViewController {
                 name: "night time routine",
                 shape: .circle,
                 color: .blue,
-                width: 120,
-                height: 120)
+                width: 150,
+                height: 150)
         ),
         Tip(
-            insight: "more than 2/3 of your mindless scrolling happens when you’re about to go to bed!",
-            advice: "some people find it helpful to make a night time routine. ",
-            action: "add a night time routine",
+            insight: "more than 1/2 of your mindless scrolling happens in the morning",
+            advice: "some people find it helpful to make a morning routine.",
+            action: "add a morning routine",
             task: Task(
-                name: "night time routine",
-                shape: .circle,
-                color: .blue,
-                width: 120,
+                name: "morning routine",
+                shape: .square,
+                color: .orange,
+                width: 130,
+                height: 130)
+        ),
+        Tip(
+            insight: "your time spent mindlessly scrolling has increased by 40% over the past few days",
+            advice: "some people find it helpful to journal about their mindless scrolling habits.",
+            action: "add a journal session",
+            task: Task(
+                name: "journal",
+                shape: .triangle,
+                color: .red,
+                width: 140,
+                height: 140)
+        ),
+        Tip(
+            insight: "your time spent mindlessly scrolling has increased by 30% over the past week",
+            advice: "some people find it helpful to be more mindful about their habits",
+            action: "add a meditation session",
+            task: Task(
+                name: "meditate",
+                shape: .rectangle,
+                color: .pPink2,
+                width: 140,
+                height: 140)
+        ),
+        Tip(
+            insight: "more than 1/2 of your mindless scrolling happens in the morning",
+            advice: "some people find it helpful to write down positive affirmation in the morning to align themselves for the day",
+            action: "add positive affirmations task",
+            task: Task(
+                name: "write positive affirmations",
+                shape: .rectangle,
+                color: .green,
+                width: 160,
                 height: 120)
         )
-    
-    
     ]
+    
+    private let selectedIndex = Int.random(in: 0..<5)
     
     @IBOutlet weak var tipBackgroundView: UIView! {
         didSet {
@@ -72,7 +105,7 @@ class InsightsViewController: UIViewController {
     }
     
     private func loadUI() {
-        let selectedTip = tips[1]
+        let selectedTip = tips[selectedIndex]
         
         tipInsightLabel.text = selectedTip.insight
         tipAdviceLabel.text = selectedTip.advice
@@ -85,7 +118,7 @@ class InsightsViewController: UIViewController {
         
         let userDefaults = UserDefaults.standard
         let completedTips = userDefaults.array(forKey: "CompletedTips") as? [Int] ?? [Int]()
-        if completedTips.contains(1) {
+        if completedTips.contains(selectedIndex) {
             tipButton.isEnabled = false
             tipButton.backgroundColor = .systemGray3
         }
@@ -121,7 +154,7 @@ class InsightsViewController: UIViewController {
     
     @IBAction func tipButtonPress(_ sender: UIButton) {
         if let navVC = tabBarController?.viewControllers?[1] as? UINavigationController, let doSomethingVC = navVC.topViewController as? DoSomethingViewController {
-            let selectedTip = tips[1]
+            let selectedTip = tips[selectedIndex]
             
             let newTask = selectedTip.task
             
@@ -140,27 +173,27 @@ class InsightsViewController: UIViewController {
             doSomethingVC.view.addSubview(taskView)
             doSomethingVC.behavior.addItem(item: taskView)
             doSomethingVC.taskViews.append(taskView)
+            doSomethingVC.updateEmptyImage()
             let tapGesture = UITapGestureRecognizer(target: doSomethingVC, action: #selector(doSomethingVC.completeTask(sender:)))
             taskView.addGestureRecognizer(tapGesture)
             tipButton.isEnabled = false
             tipButton.backgroundColor = .systemGray4
             
             var completedTips = userDefaults.array(forKey: "CompletedTips") as? [Int] ?? [Int]()
-            completedTips.append(0)
+            completedTips.append(selectedIndex)
             
             userDefaults.setValue(completedTips, forKey: "CompletedTips")
         }
         
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+   
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "View All Segue" {
+            if let destination = segue.destination as? CompletedViewController {
+                destination.isCompleted = false
+            }
+        }
     }
-    */
+    
 
 }

@@ -14,6 +14,8 @@ class DoSomethingViewController: UIViewController {
     let behavior = TaskBehavior()
     private let motionManager = CMMotionManager()
     var taskViews = [TaskView]()
+    private var emptyImageView: UIImageView?
+    
     @IBOutlet weak var addTaskButton: UIButton! {
         didSet {
             addTaskButton.layer.cornerRadius = addTaskButton.frame.width/2
@@ -26,6 +28,7 @@ class DoSomethingViewController: UIViewController {
         
         let userDefaults = UserDefaults.standard
         let currentTasks = userDefaults.array(forKey: "TaskArray") as? [String] ?? [String]()
+        setUpPlaceholder()
 
         animator.addBehavior(behavior)
         for (i, taskJson) in currentTasks.enumerated() {
@@ -46,6 +49,25 @@ class DoSomethingViewController: UIViewController {
             self.behavior.gravityBehavior.gravityDirection = CGVector(dx: deviceMotion?.attitude.roll ?? 1.0, dy: deviceMotion?.attitude.pitch ?? 1.0)
         }
         
+        updateEmptyImage()
+    }
+    
+    private func setUpPlaceholder() {
+        let width = view.frame.width
+        let size = width - 20
+        let frame = CGRect(x: width/2 - size/2, y: view.frame.midY - size/2, width: size, height: size)
+        emptyImageView = UIImageView(image: UIImage(named: "noTasks"))
+        emptyImageView?.frame = frame
+        emptyImageView?.isHidden = true
+        view.addSubview(emptyImageView!)
+    }
+    
+    func updateEmptyImage() {
+        if taskViews.count == 0 {
+            emptyImageView?.isHidden = false
+        } else {
+            emptyImageView?.isHidden = true
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -58,11 +80,10 @@ class DoSomethingViewController: UIViewController {
         if let selectedTaskView = sender.view as? TaskView {
             self.performSegue(withIdentifier: "Complete Task Segue", sender: selectedTaskView.task)
         }
-        
     }
     
     @IBAction func addTask(bySegue: UIStoryboardSegue) {
-
+        updateEmptyImage()
     }
     
     @IBAction func completeTask(bySegue: UIStoryboardSegue) {
@@ -77,11 +98,24 @@ class DoSomethingViewController: UIViewController {
                     }
                 }
             }
-        }
-        if let navVC = tabBarController?.viewControllers?[2] as? UINavigationController, let insightsVC = navVC.topViewController as? InsightsViewController {
-            insightsVC.updateChart()
+            if let navVC = tabBarController?.viewControllers?[2] as? UINavigationController, let insightsVC = navVC.topViewController as? InsightsViewController {
+                insightsVC.updateChart()
+            }
         }
         
+        if let source = bySegue.source as? CompleteTaskViewController {
+            if let task = source.task {
+                for (i, taskView) in taskViews.enumerated() {
+                    if task == taskView.task {
+                        behavior.removeItem(item: taskView)
+                        taskView.removeFromSuperview()
+                        taskViews.remove(at: i)
+                        break
+                    }
+                }
+            }
+        }
+        updateEmptyImage()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

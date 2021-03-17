@@ -23,10 +23,27 @@ class OnboardingEndViewController: UIViewController {
         }
     }
     
+    @IBOutlet weak var firstTaskLabel: UILabel!
+    @IBOutlet weak var makeMostLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        let userDefaults = UserDefaults.standard
+        let currentTasks = userDefaults.array(forKey: "TaskArray") as? [String] ?? [String]()
+
+        if currentTasks.count == 0 { return }
+        
+        let taskJson = currentTasks[0]
+        
+        let jsonDecoder = JSONDecoder()
+        let task = try! jsonDecoder.decode(Task.self, from: taskJson.data(using: String.Encoding.utf8)!)
+        
+        let frame = CGRect(x: view.frame.width/2 - 125, y: (makeMostLabel.frame.minY + firstTaskLabel.frame.maxY)/2 - 125, width: 250, height: 250)
+        let taskView = TaskView(frame: frame, task: task)
+        
+        view.addSubview(taskView)
+        
     }
     
     @IBAction func continuePress(_ sender: UIButton) {

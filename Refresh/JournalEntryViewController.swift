@@ -67,7 +67,17 @@ class JournalEntryViewController: UIViewController {
             preferredStyle: .actionSheet
         )
         actionSheet.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { (action) in
-            self.deleteJournal()
+            let alert = UIAlertController(
+                title: "Are you sure?",
+                message: "This action can not be undone.",
+                preferredStyle: .alert
+            )
+            alert.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { (action) in
+                self.deleteJournal()
+            }))
+            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+            self.present(alert, animated: true)
+    
         }))
         actionSheet.addAction(UIAlertAction(
             title: "Cancel",

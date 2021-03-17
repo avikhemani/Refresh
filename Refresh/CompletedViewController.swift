@@ -12,6 +12,7 @@ class CompletedViewController: UIViewController {
     var task: Task?
     private lazy var animator = UIDynamicAnimator(referenceView: view)
     let behavior = TaskBehavior()
+    var isCompleted = true
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +27,7 @@ class CompletedViewController: UIViewController {
             let task = try! jsonDecoder.decode(Task.self, from: taskJson.data(using: String.Encoding.utf8)!)
             
             var frame = CGRect(x: (i % 2) * 100, y: Int(view.frame.height) - 200 - Int(i/2) * 200, width: task.width, height: task.height)
-            if i == completedTasks.count - 1 {
+            if i == completedTasks.count - 1 && isCompleted {
                 self.task = task
                 frame = CGRect(x: view.frame.width/2 - CGFloat(task.width/2), y: 0, width: CGFloat(task.width), height: CGFloat(task.height))
             }
@@ -38,6 +39,14 @@ class CompletedViewController: UIViewController {
     
     
 
+    @IBAction func homePress(_ sender: UIButton) {
+        if isCompleted {
+            self.performSegue(withIdentifier: "Return From Completed", sender: nil)
+        } else {
+            self.dismiss(animated: true)
+        }
+    }
+    
     /*
     // MARK: - Navigation
 

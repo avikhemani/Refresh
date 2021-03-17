@@ -108,21 +108,21 @@ class TaskView: UIView {
     
     private func addLabel() {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 20)
+        label.font = UIFont(name: "Avenir-Medium", size: 20)
         label.textColor = .white
         label.adjustsFontSizeToFitWidth = true
         label.minimumScaleFactor = 0.2
         label.text = task.name
-        label.numberOfLines = 0
+        label.numberOfLines = 4
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .center
 
         addSubview(label)
         
         
-        label.widthAnchor.constraint(equalToConstant: frame.width - (task.shape == .triangle ? 50 : 30)).isActive = true
+        label.widthAnchor.constraint(equalToConstant: frame.width - (task.shape == .triangle || task.shape == .star ? 70 : 30)).isActive = true
         label.heightAnchor.constraint(equalToConstant: frame.height).isActive = true
-        label.centerYAnchor.constraint(equalTo: centerYAnchor, constant: task.shape == .triangle ? 20 : 0).isActive = true
+        label.centerYAnchor.constraint(equalTo: centerYAnchor, constant: task.shape == .triangle ? 30 : 0).isActive = true
         label.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
         
     }

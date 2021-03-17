@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		450234C22601ED430015D85C /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450234C12601ED430015D85C /* SettingsViewController.swift */; };
+		450234C52601EE4B0015D85C /* EditRemindersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450234C42601EE4B0015D85C /* EditRemindersViewController.swift */; };
 		4507F87E25F988C300951D61 /* CustomSegments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4507F87625F988C300951D61 /* CustomSegments.swift */; };
 		4507F87F25F988C300951D61 /* CALayerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4507F87725F988C300951D61 /* CALayerExtension.swift */; };
 		4507F88025F988C300951D61 /* BasicBarChartPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4507F87825F988C300951D61 /* BasicBarChartPresenter.swift */; };
@@ -56,6 +58,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		450234C12601ED430015D85C /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		450234C42601EE4B0015D85C /* EditRemindersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditRemindersViewController.swift; sourceTree = "<group>"; };
 		4507F87625F988C300951D61 /* CustomSegments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSegments.swift; sourceTree = "<group>"; };
 		4507F87725F988C300951D61 /* CALayerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CALayerExtension.swift; sourceTree = "<group>"; };
 		4507F87825F988C300951D61 /* BasicBarChartPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicBarChartPresenter.swift; sourceTree = "<group>"; };
@@ -160,6 +164,8 @@
 				45AD168C25FE10110022C62F /* OnboardingRemindersViewController.swift */,
 				45AD168F25FE10B70022C62F /* OnboardingEndViewController.swift */,
 				456997D925F95AD4006F35F4 /* InsightsViewController.swift */,
+				450234C12601ED430015D85C /* SettingsViewController.swift */,
+				450234C42601EE4B0015D85C /* EditRemindersViewController.swift */,
 				456997DF25F97AEF006F35F4 /* SummaryViewController.swift */,
 				456997DC25F96099006F35F4 /* Tip.swift */,
 				45A4F18125EDCF2600B9C2EE /* JournalEntryViewController.swift */,
@@ -293,6 +299,7 @@
 				45A4F18225EDCF2600B9C2EE /* JournalEntryViewController.swift in Sources */,
 				456997DA25F95AD4006F35F4 /* InsightsViewController.swift in Sources */,
 				4507F88325F988C300951D61 /* ArrayExtension.swift in Sources */,
+				450234C52601EE4B0015D85C /* EditRemindersViewController.swift in Sources */,
 				4507F88125F988C300951D61 /* UIBezierPathExtension.swift in Sources */,
 				458631A425ECD971003AA89C /* FeelingCollectionViewCell.swift in Sources */,
 				4510807F26002B2A001536DD /* TimeCollectionViewCell.swift in Sources */,
@@ -300,6 +307,7 @@
 				4584D40E25E377B1005B9705 /* DoSomethingViewController.swift in Sources */,
 				4507F88425F988C300951D61 /* DataEntry.swift in Sources */,
 				45AD168A25FE0AD80022C62F /* OnboardingActivityViewController.swift in Sources */,
+				450234C22601ED430015D85C /* SettingsViewController.swift in Sources */,
 				458FFBE525EDB70700819DAB /* Extensions.swift in Sources */,
 				4510808226002B5D001536DD /* InfoButton.swift in Sources */,
 				451CD75825E487880047C4F0 /* Task.swift in Sources */,
@@ -457,7 +465,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = W2RQLB886Y;
 				INFOPLIST_FILE = Refresh/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -465,7 +473,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = app.kmoney.Refresh;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -477,7 +485,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = W2RQLB886Y;
 				INFOPLIST_FILE = Refresh/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -485,7 +493,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = app.kmoney.Refresh;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

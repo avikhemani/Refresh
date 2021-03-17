@@ -20,6 +20,12 @@ class CompleteTaskViewController: UIViewController {
         }
     }
     
+    @IBOutlet weak var deleteButton: UIButton! {
+        didSet {
+            deleteButton.alpha = 0
+        }
+    }
+    
     @IBOutlet weak var laterButton: UIButton! {
         didSet {
             laterButton.alpha = 0
@@ -35,7 +41,7 @@ class CompleteTaskViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        let frame = CGRect(x: (view.frame.width/2) - (CGFloat(task!.width)/2), y: view.frame.height-CGFloat(task!.height), width: CGFloat(task!.width), height: CGFloat(task!.height))
+        let frame = CGRect(x: (view.frame.width/2) - (CGFloat(task!.width)/2), y: view.frame.height-CGFloat(task!.height)-20, width: CGFloat(task!.width), height: CGFloat(task!.height))
         taskView = TaskView(frame: frame, task: task!)
         view.addSubview(taskView)
         
@@ -52,9 +58,19 @@ class CompleteTaskViewController: UIViewController {
                     self.completedButton.alpha = 1.0
                 } completion: { (completed) in
                     UIView.animate(withDuration: 0.4) {
+                        
                         self.laterButton.alpha = 1.0
+                    } completion: { (completed) in
+                        UIView.animate(withDuration: 0.5) {
+                        
+                            self.deleteButton.alpha = 1.0
+
+                        }
                     }
                 }
+                
+                
+                
             }
         }
         
@@ -100,5 +116,34 @@ class CompleteTaskViewController: UIViewController {
         let impactGenerator = UIImpactFeedbackGenerator(style: .heavy)
         impactGenerator.impactOccurred()
     }
+    
+    @IBAction func deleteButtonPress(_ sender: UIButton) {
+        let alert = UIAlertController(
+            title: "Are you sure?",
+            message: "This action can not be undone.",
+            preferredStyle: .alert
+        )
+        alert.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { (action) in
+            self.deleteTask()
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        self.present(alert, animated: true)
+    }
+    
+    private func deleteTask() {
+        let jsonEncoder = JSONEncoder()
+        let jsonData = try! jsonEncoder.encode(self.task!)
+        let json = String(data: jsonData, encoding: String.Encoding.utf8)
+        
+        let userDefaults = UserDefaults.standard
+        var currentTasks = userDefaults.array(forKey: "TaskArray") as? [String] ?? [String]()
+        if let index = currentTasks.firstIndex(of: json ?? "") {
+            currentTasks.remove(at: index)
+        }
+        userDefaults.setValue(currentTasks, forKey: "TaskArray")
+        self.performSegue(withIdentifier: "Delete Task Segue", sender: nil)
+        
+    }
+    
     
 }

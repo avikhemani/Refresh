@@ -11,6 +11,7 @@ class EntriesViewController: UIViewController, UICollectionViewDelegate, UIColle
 
     var journals = [Journal]()
     
+    private var emptyImageView: UIImageView?
     @IBOutlet weak var entryCollectionView: DynamicHeightCollectionView!
     
     override func viewDidLoad() {
@@ -18,6 +19,8 @@ class EntriesViewController: UIViewController, UICollectionViewDelegate, UIColle
         
         entryCollectionView.delegate = self
         entryCollectionView.dataSource = self
+        setUpPlaceholder()
+        
         if let layout = entryCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
             layout.minimumLineSpacing = 20
         }
@@ -35,8 +38,24 @@ class EntriesViewController: UIViewController, UICollectionViewDelegate, UIColle
         entryCollectionView.reloadData()
     }
     
+    private func setUpPlaceholder() {
+        let width = view.frame.width
+        let size = width - 20
+        let frame = CGRect(x: width/2 - size/2, y: view.frame.midY - size/2, width: size, height: size)
+        emptyImageView = UIImageView(image: UIImage(named: "noEntries"))
+        emptyImageView?.frame = frame
+        emptyImageView?.isHidden = true
+        view.addSubview(emptyImageView!)
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return journals.count
+        let count = journals.count
+        if count == 0 {
+            emptyImageView?.isHidden = false
+        } else {
+            emptyImageView?.isHidden = true
+        }
+        return count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
